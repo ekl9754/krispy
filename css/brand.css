@@ -39,10 +39,10 @@ figure>p{position: absolute; font-family: 'Kanit', sans-serif;  font-size: 45px;
 .brand>ul>li>.brand-title{display: inline-block; font-size: 29px; margin-left: 3%; font-family: 'NanumSquareEB';}
 .brand>ul>li>.brand-ment{font-size: 17px; margin-top: 9%; line-height: 30px;}
 .brand>ul>li>.bold{font-size: 62px; font-family: 'Kanit', sans-serif; color: white;}
-.brand>ul>li>.color{color: #f8f8f8; text-align: right; margin-top: 2%;}
-.box1{width: 100%; height: 450px; background: #f8f8f8; margin-top: -4%;}
-.box2{width: 100%; height: 450px; background: #f8f8f8; margin-top: 22.5%;}
-.box3{width: 100%; height: 500px; background: #f8f8f8; margin-top: 22.5%;}
+.brand>ul>li>.color{color: #f2f2f2; text-align: right; margin-top: 2%;}
+.box1{width: 100%; height: 450px; background: #f2f2f2; margin-top: -4%;}
+.box2{width: 100%; height: 450px; background: #f2f2f2; margin-top: 22.5%;}
+.box3{width: 100%; height: 500px; background: #f2f2f2; margin-top: 22.5%;}
 
 /*top버튼*/
 #top-button>img{position: fixed; float: right; bottom:320px; right: 50px; position: relative;}
