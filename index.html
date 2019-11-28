@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>크리스피 크림 도넛</title>
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var currentIndex=0;
+            var button = $('#buttonList > ul >li');
+            var visual=$('#brandVisual > ul > li');
+            var setIntervalId;
+            
+            
+            
+            $("#next").on({
+                click:function(){
+                    var i=currentIndex + 1;
+                    if(i > visual.length -1 ) i =0;
+                    
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });
+            $("#pre").on({
+                click:function(){
+                    var i = currentIndex - 1;
+                    if(i < 0) i = visual.length -1;
+                    
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });
+            
+             timer(300);
+            
+            button.on({
+                click:function(){
+                    var tg=$(this);
+                    var i=tg.index();
+                    button.removeClass('on');
+                    tg.addClass('on');
+                    move(i);
+                }
+            });
+            
+            function move(i){
+                if(currentIndex == i) return;
+                
+                var current1 = visual.eq(currentIndex);
+                var next1 = visual.eq(i);
+                
+                current1.css({left:0}).stop().animate({left:'-100%'});
+                next1.css({left:'100%'}).stop().animate({left:0});
+                
+                currentIndex=i;
+            }
+            
+            
+            
+            function timer(){
+                setIntervalId=setInterval(function(){ 
+                    var n = currentIndex + 1;
+                    if(n == visual.length){
+                        n = 0;
+                    }
+                    button.eq(n).trigger('click');
+                },3000);
+            }
+            
+        
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div id="top">
+                <ul>
+                    <li><a href="html/login.html">로그인</a>&nbsp;<span>│</span></li>
+                    <li><a href="html/join.html">회원가입</a>&nbsp;<span>│</span></li>
+                    <li><a href="#">고객의소리</a>&nbsp;<span>│</span></li>
+                    <li><a href="#">윤리경영</a>&nbsp;<span>│</span></li>
+                    <li><a href="#">사이트맵</a>&nbsp;<span>│</span></li>
+                    <li><a href="#">등급안내</a></li>
+                </ul>
+            </div>
+            
+            <div id="header" class="row">
+               <h1><a href="index.html"><img src="images/logo.png" alt="크리스피크림도넛" width="150px"></a></h1>
+               
+                <ul class="main_nav cf">
+                    <li><a href="html/menu.html">MENU</a></li>
+                    <li><a href="html/home-service.html">HOME SERVICE</a></li>
+                    <li><a href="html/event.html">EVENT</a></li>
+                    <li><a href="html/brand.html">BRAND</a></li>
+                    <li><a href="html/notice.html">NOTICE</a></li>
+                </ul>
+            </div>
+        </header>
+        
+        <figure>
+            <div id="brandVisual">
+                <ul>
+                    <li class="visual01"></li>
+                    <li class="visual02"></li>
+                    <li class="visual03"></li>
+                </ul>
+            </div>
+            <div id="buttonList">
+                <ul>
+                    <li class="on"><a href="#">버튼1</a></li>
+                    <li><a href="#">버튼2</a></li>
+                    <li><a href="#">버튼3</a></li>
+                </ul>
+            </div>
+            <div id="next"><a href="#"><img src="images/next_arrow_img.png" alt="next"></a></div>
+            <div id="pre"><a href="#"><img src="images/prev_arrow_img.png" alt="prev"></a></div>
+        </figure>
+        
+        <section id="part1">
+            <div id="new-menu">
+                <span>NEW MENU</span>
+                <div class="d_box">
+                    <div class="summer">
+                        <img src="images/newmenu-icon.png" alt="썸머시즌아이콘" width="35px">
+                        <h1>썸머시즌 한정도넛</h1>
+                        <h2>맛있을 수박링</h2>
+                        <p>달콤한 수박캔디<br/>아이싱으로 강렬한<br/>색감을 더하고 해바라기<br/>초코볼을 토핑한 도넛</p>
+                    </div>
+                    <div class="doughnuts">
+                        <img src="images/doughnuts1.png" alt="맛있을 수박링" width="300px" height="270">
+                    </div>
+                </div>
+            </div>
+            
+            <div id="event">
+                <span>EVENT</span>
+                <div class="e_box">
+                    <div class="day">
+                        <img src="images/event-icon.png" alt="도넛아이콘" width="35px">
+                        <h1>달콤한 수요일</h1>
+                        <p>오리지널<br/>글레이즈드<br/>하프더즌</p>
+                        <h2>1+1</h2>
+                    </div>
+                    <div class="doughnuts">
+                        <img src="images/doughnuts2.png" alt="오리지널 글레이즈드 하프더즌" width="270px" height="200">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="part2">
+            <div id="gift">
+                <p>크리스피에서 경험하는 제품, 그 이상의 경험,</p><br>
+                <h1>여러분께 드리는 <span>최고의 선물</span>입니다.</h1>     
+            </div>
+            
+            <div class="gift-img">
+                <div class="gift_1">
+                    <img src="images/gift-1.jpg" alt="크리스피" width="400px" height="300px">
+                    <p>방금 생산한 도넛 판매</p>
+                </div>
+                <div class="gift_2">
+                    <img src="images/gift-2.jpg" alt="도넛" width="400px" height="300px">
+                    <p>CO2배출이 없는 생산방식</p>
+                </div>
+                <div class="gift_3">
+                    <img src="images/gift-3.jpg" alt="도넛" width="400px" height="300px">
+                    <p>입안에서 퍼지는 부드러운 맛</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="part3">
+                <div id="news">
+                    <h1>크리스피 NEWS</h1>       
+                </div>
+                
+                <div id="main-news">
+                <div class="news-content1">
+                    <img src="images/news-1.jpg" alt="" width="320px" height="300px">
+                    <h1>공지사항</h1>
+                    <div class="line"></div>
+                    <div class="left"><img src="images/left.png" alt="공지사항"></div>
+                    <p>신제품 ‘썸머 프룻 Summer<br/>Fruit’ 6종 출시</p>
+                </div>
+                
+                <div class="news-content2">
+                    <img src="images/news-2.jpg" alt="" width="320px" height="300px">
+                    <h1>이벤트</h1>
+                    <div class="line"></div>
+                     <div class="left"><img src="images/left.png" alt="이벤트"></div>
+                    <p>COOL하게 쿠폰받고<br/>COOL하게 웹툰보자!</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="footer-line"></div>
+        <footer>
+           
+                <div id="footer">
+                    <ul>
+                        <li><a href="#">회사소개</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">채용정보</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">이용약관</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">개인정보처리방침</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">영상정보 처리기기 운영 및 관리 방침</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">이메일무단수집거부</a>&nbsp;<span>│</span></li>
+                        <li><a href="#">CONTACT US</a></li>
+                    </ul>
+                    
+                    <address>
+                        서울특별시 용산구 한강대로71길 47 대표문의 : 02-709-1114 (가맹문의, 행사안내 등)<br/>
+                        고객지원센터 080-023-9776 (고객불편사항 등) 사업자 번호 : 106-81-23498  <span>│</span>  대표자 : 남익우<br/>
+                        COPYRIGHT &copy; 2013 KRISPY KREME DOUGHNUTS ALL RIGHTS RISERVED
+                    </address>
+                    
+                    
+                    <div class="footer-right">
+                        <select onchange="if(this.value) window.open(this.value)">
+                           <option>FAMILY SITE</option>
+                            <option value="https://www.lpoint.com ">LPOINT</option>
+                            <option value="http://www.lottefoods.co.kr/">롯데푸드</option>
+                            <option value="http://www.lottemart.com">롯데마트</option>
+                            <option value="http://www.lottesuper.co.kr ">롯데슈퍼</option>
+                        </select>
+                        
+                        <div class="sns">
+                            <a href="http://www.lotteria.com"><img src="images/footer_ico01.gif" alt=""></a>
+                            <a href="http://www.angelinus.com"><img src="images/footer_ico02.gif" alt=""></a>
+                            <a href="http://www.tgif.co.kr "><img src="images/footer_ico03.gif" alt=""></a>
+                            <a href="https://www.facebook.com/kkdkorea1937"><img src="images/footer_ico04.gif" alt="" width="25px"></a>
+                            <a href="https://www.instagram.com/krispykremekr/"><img src="images/footer_ico05.gif" alt="" width="25px"></a>
+                            <a href="https://twitter.com/krispykremekr"><img src="images/footer_ico06.gif" alt="" width="25px"></a>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        
+        
+    </div>
+</body>
+</html>

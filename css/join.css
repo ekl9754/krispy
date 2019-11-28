@@ -1,0 +1,55 @@
+@charset "utf-8";
+@import url(reset.css);
+@font-face {
+            font-family: 'NanumSquareR';
+            src: url('../font/NanumSquareR.ttf'),
+                url('../font/NanumSquareR.eot');
+}
+@font-face {
+            font-family: 'NanumSquareB';
+            src: url('../font/NanumSquareB.ttf'),
+                url('../font/NanumSquareB.eot');
+}
+@font-face {
+            font-family: 'NanumSquareEB';
+            src: url('../font/NanumSquareEB.ttf'),
+                url('../font/NanumSquareB.eot');
+}
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+    font-family:'NanumSquareB';
+}
+
+
+/*figure*/
+figure{position: relative; margin-top: 40px;}
+figure>p{position: absolute; font-family: 'Kanit', sans-serif;  font-size: 45px; color: #393939; margin-left: 30%; margin-top: 5%;}
+
+/*content-1*/
+#content-1{width: 100%;}
+.main-title{text-align: center; margin-top: 8%;}
+.main-title>h2{font-size: 35px;}
+.main-title>.title-line{width: 60px; height: 5px; background: #00704a; margin: 1% auto;}
+.join-box{position: relative; width: 100%;}
+.join-inbox{width: 60%; margin: 0 auto; position: relative; }
+.form{width: 100%; margin: 0 auto; }
+.form>p.name{margin-left: 25%; margin-top: 30px; font-size: 17px; font-family: 'NanumSquareEB'; }
+input.name{ border: none; background: #eee; width: 50%; padding: 20px 20px; margin-left: 25%; margin-top: 2%; display: block; font-size: 15px;}
+.form>p.id_check{position: absolute; right: 26%; top: 28%; color:#546220; font-size: 15px;}
+.form>p.id{margin-left: 25%; margin-top: 30px; font-size: 17px; font-family: 'NanumSquareEB';}
+input.id{ border: none; background: #eee; width: 50%; padding: 20px 20px; margin-left: 25%; margin-top: 2%; display: block; font-size: 15px;}
+.form>p.password{margin-left: 25%; margin-top: 30px; font-size: 17px; font-family: 'NanumSquareEB';}
+input.password{ border: none; background: #eee; width: 50%; padding: 20px 20px; margin-left: 25%; margin-top: 1%; display: block; font-size: 15px;}
+
+
+/*개인정보동의*/
+.check_box{width: 50%; margin: 0 auto; }
+.check_box>.check{position: absolute; margin-top: 28px; margin-left: 2%;}
+.check_main_txt{width: 100%; height: 80px; line-height: 80px;
+cursor: pointer; font-size: 19px; text-transform: uppercase; padding-left: 11%; 
+box-sizing: border-box; border-bottom: 1px solid #eee;  background-position:20px; background-size: 38px;}
+.check_main_txt>span.must{color: #00704a;}
+textarea.agree{width: 101%; display: none; resize: none;}
+input.back_button{ border: none; width: 50%; padding: 20px 30px; margin-top: 1%; background: #546220; color: white; font-size: 17px; cursor: pointer; font-family: 'NanumSquareB';}
+input.join_button{ border: none; width: 50%; padding: 20px 30px; margin-left: 25%; margin-top: 1%; background: #00704a; color: white; font-size: 17px; cursor: pointer; font-family: 'NanumSquareB'; margin-bottom: 5%}

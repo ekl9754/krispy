@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>크리스피 크림 도넛 > LOGIN</title>
+    <link rel="stylesheet" href="../css/login.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit:500,800i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+
+            $("#top-button>img").click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header></header>
+ 
+        <section id="content-1">
+            <div class="main-title">
+                <h2>로그인</h2>
+                <div class="title-line"></div>
+            </div>
+            
+            <div class="login-box">
+           <div class="login-inbox">
+               <div class="login-input">
+                    <form class="form">
+                        <input type="text" class="id" title="아이디 입력" placeholder="아이디를 입력하세요.">
+                        <input type="password" class="password" title="비밀번호 입력" placeholder="비밀번호를 입력하세요.">
+                        <input type="submit" class="login_button" title="로그인" value="로그인">
+                    </form>
+                    
+                    <div class="find">
+                        <ul>
+                            <li><a href="#1">아이디 찾기</a></li>
+                            <li>|</li>
+                            <li><a href="#2">비밀번호 찾기</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="login_line"></div>
+                    <div class="member">
+                        <p class="member_title">아직도 회원이 아니신가요?</p>
+                        <p class="member_ment">회원이 되시면 서비스를 비롯하여 다양한 이벤트에 참여하실 수 있습니다.</p>
+                        <a href="join.html"><button class="join" title="회원가입">회원가입</button></a>
+                    </div>
+               </div>
+           </div>
+       </div>
+    		
+        </section>
+        
+        
+
+
+        <div class="footer-line"></div>
+        <footer>
+        </footer>
+
+
+
+    </div>
+</body>
+
+</html>

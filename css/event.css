@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import url(reset.css);
+@font-face {
+            font-family: 'NanumSquareR';
+            src: url('../font/NanumSquareR.ttf'),
+                url('../font/NanumSquareR.eot');
+}
+@font-face {
+            font-family: 'NanumSquareB';
+            src: url('../font/NanumSquareB.ttf'),
+                url('../font/NanumSquareB.eot');
+}
+@font-face {
+            font-family: 'NanumSquareEB';
+            src: url('../font/NanumSquareEB.ttf'),
+                url('../font/NanumSquareB.eot');
+}
+#wrap{
+    width: 100%;
+    margin: 0 auto;
+    font-family:'NanumSquareB';
+}
+
+
+/*figure*/
+figure{position: relative; margin-top: 40px;}
+figure>p{position: absolute; font-family: 'Kanit', sans-serif;  font-size: 45px; color: #393939; margin-left: 30%; margin-top: 5%;}
+
+/*content-1*/
+#content-1{width: 100%;}
+.main-title{text-align: center; margin-top: 3%;}
+.main-title>h2{font-size: 35px;}
+.main-title>.title-line{width: 60px; height: 5px; background: #00704a; margin: 1% auto;}
+.main-title>p{font-size: 18px; color: #525252; line-height: 25px;}
+.event-item{width: 100%; margin-top: 3%;}
+.event-item>ul{width: 70%; margin: 0 auto;}
+.event-item>ul>li{width: 48%; height: 300px; margin: 1%; float: left; border-bottom: 1px solid #eee;}
+.event-item>ul>.inner{padding: 40px 20px;}
+.event-item>ul>li>.event-title{font-size: 25px; margin-bottom: 5%; font-family: 'NanumSquareEB';}
+.event-item>ul>li>.event-ment{font-size: 17px; color: #525252; font-family: 'NanumSquareR'; margin-bottom: 5%;}
+.event-item>ul>li>.event-day{font-size: 17px; margin-bottom: 13%}
+.event-item>ul>li>.more{background: #00704a; color: white; padding:10px 20px;}
+.event-item>.more_view{clear: both; text-align: center; border: 1px solid #ccc; width: 200px; margin: 0 auto; padding:15px 20px; cursor: pointer; color: #525252;}
+
+/*top버튼*/
+#top-button>img{position: fixed; float: right; bottom:320px; right: 50px; position: relative;}
+

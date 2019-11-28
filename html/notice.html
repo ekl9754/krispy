@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>크리스피 크림 도넛 > NOTICE</title>
+    <link rel="stylesheet" href="../css/notice.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit:500,800i&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
+    <meta name="viewport" content="width=device-width, intial-scale=1.0" />
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("header").load("header.html");
+            $("footer").load("footer.html");
+
+            $("#top-button>img").click(function() {
+                $('html,body').animate({
+                    scrollTop: 0
+                }, 500);
+            });
+            
+            //공지사항 쪽수
+
+                    var i=0;
+                    console.log($("table").index());
+                    $(".n1").show();
+                    $(".num_1").addClass("onClick");
+                    $(".num_2").removeClass("onClick");
+                    $(".num_3").removeClass("onClick");
+                    $(".n2").hide();
+                    $(".n3").hide();
+
+                    $(".front_page").click(function(e){
+                        e.preventDefault();
+                        $(".n1").show();
+                        $(".num_1").addClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n2").hide();
+                        $(".n3").hide();
+                    });
+
+                    $(".prev").click(function(e){
+                        e.preventDefault();
+                        switch(i){
+                            case 1:
+                                i = 0;
+                                $(".n1").show();
+                                $(".num_1").addClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n2").hide();
+                                $(".n3").hide();
+                                break;
+                            case 2:
+                                i = 1;
+                                $(".n2").show();
+                                $(".num_2").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n3").hide();
+                                break;
+                            case 3:
+                                i = 2;
+                                $(".n3").show();
+                                $(".num_3").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n2").hide();
+                                break;
+
+                        }
+
+                    });
+
+                    $(".num_1").click(function(e){
+                        e.preventDefault();
+                        i = 0;
+                        $(".n1").show();
+                        $(".num_1").addClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n2").hide();
+                        $(".n3").hide();
+                    });
+                    $(".num_2").click(function(e){
+                        e.preventDefault();
+                        i = 1;
+                        $(".n2").show();
+                        $(".num_2").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_3").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n3").hide();
+                    });
+                    $(".num_3").click(function(e){
+                        e.preventDefault();
+                        i = 2;
+                        $(".n3").show();
+                        $(".num_3").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n2").hide();
+                    });
+
+
+                    $(".next").click(function(e){
+                        e.preventDefault();
+                        switch(i){
+                            case 0:
+                                i = 1;
+                                $(".n2").show();
+                                $(".num_2").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_3").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n3").hide();
+                                break;
+                            case 1:
+                                i = 2;
+                                $(".n3").show();
+                                $(".num_3").addClass("onClick");
+                                $(".num_1").removeClass("onClick");
+                                $(".num_2").removeClass("onClick");
+                                $(".n1").hide();
+                                $(".n2").hide();
+                                break;
+
+                        }
+
+                    });
+
+                    $(".back_page").click(function(e){
+                        e.preventDefault();
+                        $(".n3").show();
+                        $(".num_3").addClass("onClick");
+                        $(".num_1").removeClass("onClick");
+                        $(".num_2").removeClass("onClick");
+                        $(".n1").hide();
+                        $(".n2").hide();
+                    });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header></header>
+
+        <figure>
+            <p>NOTICE</p>
+            <img src="../images/notice/keyimage.jpg" alt="공지사항" width="100%" height="250px">
+        </figure>
+ 
+        <section id="content-1">
+            <div class="main-title">
+                <h2>공지사항</h2>
+                <div class="title-line"></div>
+                <p>크리스피 크림의 새로운 소식을 모아 고객 여러분께 전합니다.</p>
+            </div>
+            
+    		<div id="section_1">
+    			<div class="searchbox">
+    				<form action="post" class="searcharea">
+    					<fieldset>
+    						<legend>게시물검색</legend>
+    						<select name="select1" id="select1" class="selectbox">
+    							<option value>전체</option>
+    							<option value="1">제목</option>
+    							<option value="2">내용</option>
+    						</select>
+    						<input type="text" class="text" title="검색어" placeholder="검색어를 입력하세요.">
+    						<i class="fa fa-search"></i>
+    					</fieldset>
+    				</form>
+    			</div>
+    		
+    		  
+    		
+    			
+    			<table class="news n1">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">23</td>
+    						<td class="name"><a href="#1">크리스피크림 도넛, 추운 연말 유기동물 센터 건립 함께 한다</a></td>
+    						<td class="date">2019 - 11 - 24</td>
+    					</tr>
+    					<tr>
+    						<td class="number">22</td>
+    						<td class="name"><a href="#1">2020년 1월 1일 Pokemon GO 제휴가 종료 됩니다</a></td>
+    						<td class="date">2019 - 11 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">21</td>
+    						<td class="name"><a href="#1">“극강의 단맛” 크리스피 신상도넛 3단 초코 '헤이즐넛 초콜릿 링'의 비밀?...</a></td>
+    						<td class="date">2019 - 11 - 08</td>
+    					</tr>
+    					<tr>
+    						<td class="number">20</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, '월드초이스 도넛' 한정 출시</a></td>
+    						<td class="date">2019 - 10 - 17</td>
+    					</tr>
+    					<tr>
+    						<td class="number">19</td>
+    						<td class="name"><a href="#1">	크리스피 크림도넛, 비주얼 폭발 '초콜릿 글레이즈드' 한정 출시</a></td>
+    						<td class="date">2019 - 10 - 03</td>
+    					</tr>
+    					<tr>
+    						<td class="number">18</td>
+    						<td class="name"><a href="#1">크리스피크림, 녹차 덕후들 최애 '오설록 그린티 도넛' 재출시한다</a></td>
+    						<td class="date">2019 - 09 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">17</td>
+    						<td class="name"><a href="#1">세계적으로 주목 받는 '루비 초콜릿' 사용 제품 선보여</a></td>
+    						<td class="date">2019 - 08 - 28</td>
+    					</tr>
+    					<tr>
+    						<td class="number">16</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, '초코매니아 4.0' 5종 출시</a></td>
+    						<td class="date">2019 - 08 - 12</td>
+    					</tr>
+    					<tr>
+    						<td class="number">15</td>
+    						<td class="name"><a href="#1">"당신의 도넛에 투표하세요" 크리스피 크림도 시작한 '도넛듀스 101'</a></td>
+    						<td class="date">2019 - 07 - 19</td>
+    					</tr>
+    					<tr>
+    						<td class="number">14</td>
+    						<td class="name"><a href="#1">	크리스피 크림 도넛, '오리지널 필드' 2종 한정 출시</a></td>
+    						<td class="date">2019 - 07 - 02</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n2">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">13</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, 신제품 '썸머 프룻' 6종 출시</a></td>
+    						<td class="date">2019 - 06 - 30</td>
+    					</tr>
+    					<tr>
+    						<td class="number">12</td>
+    						<td class="name"><a href="#1">L.POINT 서비스 일시 중단 안내</a></td>
+    						<td class="date">2019 - 06 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">11</td>
+    						<td class="name"><a href="#1">개인정보처리방침 변경안내</a></td>
+    						<td class="date">2019 - 05 - 01</td>
+    					</tr>
+    					<tr>
+    						<td class="number">10</td>
+    						<td class="name"><a href="#1">롯데멤버스 엘포인트 서비스 일시 사용중지 안내</a></td>
+    						<td class="date">2019 - 04 - 29</td>
+    					</tr>
+    					<tr>
+    						<td class="number">9</td>
+    						<td class="name"><a href="#1">개인정보처리방침 변경안내</a></td>
+    						<td class="date">2019 - 04 - 15</td>
+    					</tr>
+    					<tr>
+    						<td class="number">8</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, 크리스마스 신제품 인증샷 이벤트 진행</a></td>
+    						<td class="date">2019 - 04 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">7</td>
+    						<td class="name"><a href="#1">짱구 만화 속에서 그대로 데려온 듯한 '크리스피크도넛' 흰둥이 무드등 나왔다...</a></td>
+    						<td class="date">2019 - 03 - 25</td>
+    					</tr>
+    					<tr>
+    						<td class="number">6</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, '크리스마스 신제품 4종 출시'</a></td>
+    						<td class="date">2019 - 03 - 04</td>
+    					</tr>
+    					<tr>
+    						<td class="number">5</td>
+    						<td class="name"><a href="#1">가격 조정 안내</a></td>
+    						<td class="date">2019 - 01 - 23</td>
+    					</tr>
+    					<tr>
+    						<td class="number">4</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, 카카오닙스 글레이즈드 출시</a></td>
+    						<td class="date">2019 - 01 - 02</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    			
+    			<table class="news n3">
+    				<thead>
+    					<tr>
+    						<td class="hnumber">번호</td>
+    						<td class="hname">제목</td>
+    						<td class="hdate">등록일</td>
+    					</tr>
+    				</thead>
+    				<tbody>
+    					<tr>
+    						<td class="number">3</td>
+    						<td class="name"><a href="#1">크리스피 크림 도넛, 신제품 '하이카카오 4종' 출시</a></td>
+    						<td class="date">2018 - 12 - 11</td>
+    					</tr>
+    					<tr>
+    						<td class="number">2</td>
+    						<td class="name"><a href="#1">크리스피 도넛, 오늘(21일)부터 딱 10일간 '초코 범벅' 글레이즈드 한정...</a></td>
+    						<td class="date">2018 - 12 - 02</td>
+    					</tr>
+    					<tr>
+    						<td class="number">1</td>
+    						<td class="name"><a href="#1">개인정보처리방침 변경안내</a></td>
+    						<td class="date">2018 - 11 - 12</td>
+    					</tr>
+    				</tbody>
+    			</table>
+    					
+    			
+    			
+    			<div class="page_num">
+    				<a href="#" class="front_page">
+    				</a>
+    				<a href="#" class="prev">
+    				</a>
+    				<a href="#" class="num_1">1</a>
+    				<a href="#" class="num_2">2</a>
+    				<a href="#" class="num_3">3</a>
+    				<a href="#" class="next">
+    				</a>
+    				<a href="#" class="back_page">
+    				</a>
+    			</div>
+    		</div>
+        </section>
+        
+        
+
+
+        <div class="footer-line"></div>
+        <footer>
+        </footer>
+
+        <div id="top-button">
+            <img src="../images/Arrow_top.png" alt="goto_top" width="80px">
+        </div>
+
+    </div>
+</body>
+
+</html>

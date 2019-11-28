@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>크리스피 크림 도넛</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        
+        $(document).ready(function(){    
+            
+            $("#menu_bt").click(function(){
+                 $("#info").stop().show();
+                
+             });
+            
+            $("#menu_bt").click(function(){
+                 $("#info").animate({left:0},500);     
+             });
+            
+            $(".close").click(function(){
+                 $("#info").animate({left:"-100%"},500);     
+             });
+            
+ 
+            $("#close_bt").click(function(){
+                 $("#info2").stop().show(300);     
+             });
+            
+            $("#info2>.close").click(function(){
+                 $("#info2").hide(300);     
+             });
+        });
+    </script>
+    
+    <style>
+    /*nav*/
+header{background: white; height: 60px; width: 100%; }
+header>.h_top{position:relative;}
+header>.h_top>h1{text-align: center; margin-top: 15px;}
+header>.h_top>a{float: right; padding-right: 20px;}
+
+
+/*햄버거 메뉴*/
+#info{position: absolute; width: 80%; height: 100%; display: none; background: #eeeeee; top: 0; z-index: 3; left: -100%;}
+#info>.ham_menu{font-family:'NanumSquareEB'; padding-left: 40px; float: left; font-size: 1.5em; background: #00704a; width: 100%; padding: 15px 20px; color: white; height: 60px;}
+#info>.close{position: absolute; right: 0; height:60px; color: white; overflow: hidden;background:#02432d; padding: 20px }
+#info>.info_b>ul{margin-top: 30px; clear: both;}
+#info>.info_b>ul>li{border-bottom: 1px solid #cccccc; padding-left: 10px; color: #00704a; padding: 20px; font-family:'NanumSquareEB'; background: url(../images/hamburger_icon.png)no-repeat; background-position: 15px; background-size: 25px}
+#info>.info_b>ul>li>a{margin-left: 25px}
+#info>.info_b>ul>li:nth-child(odd){background: url(../images/hamburger_icon.png)no-repeat white; background-position: 15px; background-size: 25px}
+#info>.info_b>ul>li:nth-child(even){background:url(../images/hamburger_icon.png)no-repeat #eeeeee; background-position: 15px; background-size: 25px}
+#menu_bt{margin-top: -40px; position: absolute; margin-left: 20px; }
+#close_bt{margin-top: -45px}
+
+
+/*위치 메뉴*/
+#info2{position: absolute; width: 100%; display: none; background: #eeeeee; top: 0; z-index: 3; right:0; padding-bottom: 30px; }
+#info2>.ham_menu{font-family:'NanumSquareEB'; padding-left: 40px; float: left; font-size: 1.5em; background: #00704a; width: 100%; padding: 15px 20px; color: white; height: 60px;}
+#info2>.close{position: absolute; right: 0; height:60px; color: white; overflow: hidden;background:#02432d; padding: 20px }
+#info2>.info_b>input[type="search"]{border: 2px solid #00704a; width: 80%; height: 40px; padding: 10px; margin: 20px;}
+#info2>.info_b>a>img{width: 20px; position: absolute; top: 90px;}
+#info2>.info_b>.location1{width: 90%; margin: 0 auto; border: 3px solid white; background: white;}
+#info2>.info_b>.location1>p{font-size: 1.2em; color: #00704a; padding:10px; font-family:'NanumSquareEB';}
+#info2>.info_b>.location1>ul>li{border-bottom: 1px solid #cccccc;padding: 10px;}
+#info2>.info_b>.location1>ul>li>p{text-indent: 18px; font-size:0.8em; padding-top: 5px; color: #525252;}
+#info2>.info_b>.location1>ul>li:nth-child(4){border-bottom: 0}
+#menu_bt{margin-top: -40px; position: absolute; margin-left: 20px; float:left;}
+#close_bt{margin-top: -45px}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="h_top">
+            <h1><a href="m_index.html"><img src="../images/logo.png" alt="크리스피크림도넛" width="120px"></a></h1>
+            
+            <a href="#" id="menu_bt"><img src="../images/menu-icon.png" alt="메뉴" width="25px"></a>
+            <a href="#" id="close_bt"><img src="../images/menu-location.png" alt="매장찾기" width="30px"></a>
+        </div>        
+    </header>
+    
+    <div id="info">
+             <div class="ham_menu">
+                <p><a href="#">메뉴</a></p>
+            </div>
+            <div class="close">
+                <p>X</p>
+            </div>
+                
+            <div class="info_b">
+                <ul>
+                <li><a href="m_sub_1.html">MENU</a></li>
+                <li><a href="#">HOME SERVICE</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">SERVEY</a></li>
+                </ul>
+            </div>
+    </div>
+           
+     <div id="info2">
+             <div class="ham_menu">
+                <p><a href="#">매장찾기</a></p>
+            </div>
+            <div class="close">
+                <p>X</p>
+            </div>
+                
+            <div class="info_b">
+                <input type="search" placeholder="가까운 지점을 검색해주세요.">
+                <a href="#"><img src="images/search.png" alt=""></a>
+                
+                <div class="location1">
+                    <p>BEST SHOP</p>
+                    <ul>
+                        <li>1. 영등포점<p>영등포동 618-496 영등포역사 3층</p></li>
+                        <li>2. 강남역점<p>서울특별시 강남구 역삼동 825-8</p></li>
+                        <li>3. 수원인계점<p>경기도 수원시 팔달구 인계동 1114-7 우암빌딩 1층</p></li>
+                        <li>4. 코엑스몰점<p>서울특별시 강남구 삼성동 159 코엑스</p></li>
+                    </ul>
+                </div>
+                
+            </div>
+    </div>           
+         
+   
+</body>
+</html>

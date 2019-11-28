@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>크리스피 크림 도넛</title>
+    <link rel="stylesheet" href="../css/m_index.css">
+    <meta name="viewport" content="width=device-width, intial-scale=1.0"/>
+    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var currentIndex=0;
+            var button = $('#buttonList > ul >li');
+            var visual=$('#brandVisual > ul > li');
+            var setIntervalId;
+            
+            
+            
+            $("#next").on({
+                click:function(){
+                    var i=currentIndex + 1;
+                    if(i > visual.length -1 ) i =0;
+                    
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });
+            $("#pre").on({
+                click:function(){
+                    var i = currentIndex - 1;
+                    if(i < 0) i = visual.length -1;
+                    
+                    button.eq(i).trigger('click');
+                    move(i);
+                }
+            });
+            
+             timer(300);
+            
+            button.on({
+                click:function(){
+                    var tg=$(this);
+                    var i=tg.index();
+                    button.removeClass('on');
+                    tg.addClass('on');
+                    move(i);
+                }
+            });
+            
+            function move(i){
+                if(currentIndex == i) return;
+                
+                var current1 = visual.eq(currentIndex);
+                var next1 = visual.eq(i);
+                
+                current1.css({left:0}).stop().animate({left:'-100%'});
+                next1.css({left:'100%'}).stop().animate({left:0});
+                
+                currentIndex=i;
+            }
+            
+            
+            
+            function timer(){
+                setIntervalId=setInterval(function(){ 
+                    var n = currentIndex + 1;
+                    if(n == visual.length){
+                        n = 0;
+                    }
+                    button.eq(n).trigger('click');
+                },3000);
+            }
+                 
+            
+            $("#menu_bt").click(function(){
+                 $("#info").stop().show();
+                
+             });
+            
+            $("#menu_bt").click(function(){
+                 $("#info").animate({left:0},500);     
+             });
+            
+            $(".close").click(function(){
+                 $("#info").animate({left:"-100%"},500);     
+             });
+            
+ 
+            $("#close_bt").click(function(){
+                 $("#info2").stop().show(300);     
+             });
+            
+            $("#info2>.close").click(function(){
+                 $("#info2").hide(300);     
+             });
+            
+            $("#top-button>button").click(function(){
+                $('html,body').animate({scrollTop:0},500);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="wrap">
+
+     <header>
+        <div class="h_top">
+            <h1><a href="m_index.html"><img src="../images/logo.png" alt="크리스피크림도넛" width="120px"></a></h1>
+            
+            <a href="#" id="menu_bt"><img src="../images/menu-icon.png" alt="메뉴" width="25px"></a>
+            <a href="#" id="close_bt"><img src="../images/menu-location.png" alt="매장찾기" width="30px"></a>
+        </div>        
+    </header>
+    
+    <div id="info">
+             <div class="ham_menu">
+                <p><a href="#">메뉴</a></p>
+            </div>
+            <div class="close">
+                <p>X</p>
+            </div>
+                
+            <div class="info_b">
+                <ul>
+                <li><a href="m_sub_1.html">MENU</a></li>
+                <li><a href="#">HOME SERVICE</a></li>
+                <li><a href="#">EVENT</a></li>
+                <li><a href="#">BRAND</a></li>
+                <li><a href="#">SERVEY</a></li>
+                </ul>
+            </div>
+    </div>
+           
+     <div id="info2">
+             <div class="ham_menu">
+                <p><a href="#">매장찾기</a></p>
+            </div>
+            <div class="close">
+                <p>X</p>
+            </div>
+                
+            <div class="info_b">
+                <input type="search" placeholder="가까운 지점을 검색해주세요.">
+                <a href="#"><img src="../images/search.png" alt=""></a>
+                
+                <div class="location1">
+                    <p>BEST SHOP</p>
+                    <ul>
+                        <li>1. 영등포점<p>영등포동 618-496 영등포역사 3층</p></li>
+                        <li>2. 강남역점<p>서울특별시 강남구 역삼동 825-8</p></li>
+                        <li>3. 수원인계점<p>경기도 수원시 팔달구 인계동 1114-7 우암빌딩 1층</p></li>
+                        <li>4. 코엑스몰점<p>서울특별시 강남구 삼성동 159 코엑스</p></li>
+                    </ul>
+                </div>
+                
+            </div>
+    </div>           
+                       
+        <figure>
+            <div id="brandVisual">
+                <ul>
+                    <li class="visual01"><a href="#">베너1</a></li>
+                    <li class="visual02"><a href="#">베너2</a></li>
+                    <li class="visual03"><a href="#">베너3</a></li>
+                </ul>
+            </div>
+            <div id="buttonList">
+                <ul>
+                    <li class="on"><a href="#">버튼1</a></li>
+                    <li><a href="#">버튼2</a></li>
+                    <li><a href="#">버튼3</a></li>
+                </ul>
+            </div>
+            <div id="next"><a href="#"><img src="../images/next_arrow_img.png" alt="" width="20px"></a></div>
+            <div id="pre"><a href="#"><img src="../images/prev_arrow_img.png" alt="" width="20px"></a></div>
+        </figure>
+        
+        <section id="part1">
+            <div id="new-menu">
+                <div class="new-menu-font">
+                    <span>NEW MENU</span>
+                </div>
+                <div class="t_box">
+                    <img src="../images/newmenu-icon.png" alt="" width="20px" class="newmenu-icon">
+                    <h1>썸머시즌 한정도넛</h1>
+                </div>
+                <div class="d_box">
+                    <div class="summer">
+                        <h2>맛있을 수박링</h2>
+                        <p>달콤한 수박캔디<br/>아이싱으로 강렬한<br/>색감을 더하고 해바라기<br/>초코볼을 토핑한 도넛</p>
+                    </div>
+                    <div class="doughnuts">
+                        <img src="../images/doughnuts1.png" alt="" _width="50%">
+                    </div>
+                </div>
+            </div>
+            <div id="event">
+                <div class="event-font">
+                    <span>EVENT</span>
+                </div>
+                <div class="t_box">
+                    <img src="../images/event-icon.png" alt="" width="20px" class="newmenu-icon">
+                    <h1>달콤한 수요일</h1>
+                </div>
+                <div class="d_box">
+                    <div class="summer">
+                        <p>오리지널<br/>글레이즈드<br/>하프더즌</p>
+                        <h2>1+1</h2>
+                    </div>
+                    <div class="doughnuts">
+                        <img src="../images/doughnuts2.png" alt="" _width="50%">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+     <section id="part2">
+            <div id="gift">
+                <p>크리스피에서 경험하는 제품, 그 이상의 경험,</p><br>
+                <h1>여러분께 드리는 <span>최고의 선물</span>입니다.</h1>     
+            </div>
+            
+            <div class="gift-img">
+                <div class="gift_1">
+                    <img src="../images/gift-1.jpg" alt="">
+                    <p>방금 생산한 도넛 판매</p>
+                </div>
+                <div class="gift_2">
+                    <img src="../images/gift-2.jpg" alt="">
+                    <p>CO2배출이 없는 생산방식</p>
+                </div>
+                <div class="gift_3">
+                    <img src="../images/gift-3.jpg" alt="">
+                    <p>입안에서 퍼지는 부드러운 맛</p>
+                </div>
+            </div>
+        </section>
+        
+         <section id="part3">
+            <div id="news">
+                    <h1>크리스피 소식</h1>       
+                </div>
+            
+            <div id="main-news">
+                <div class="news-content1">
+                    <img src="../images/news-1.jpg" alt="" width="180px" height="180px">
+                    <h1>공지사항</h1>
+                    <div class="line"></div>
+                    <div class="left"><img src="../images/left.png" alt=""></div>
+                    <p>신제품 ‘썸머 프룻 Summer<br/>Fruit’ 6종 출시</p>
+                </div>
+                
+                <div class="news-content2">
+                    <img src="../images/news-2.jpg" alt="" width="180px" height="180px">
+                    <h1>이벤트</h1>
+                    <div class="line"></div>
+                     <div class="left"><img src="../images/left.png" alt=""></div>
+                    <p>COOL하게 쿠폰받고<br/>COOL하게 웹툰보자!</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <div class="footer-line"></div>
+        <div id="top-button">
+            <button>▲ TOP</button>
+        </div>
+        <footer>
+           
+                <div id="footer">                
+                    
+                    <address>
+                        서울특별시 용산구 한강대로71길 47 대표문의 : 02-709-1114 (가맹문의, 행사안내 등)<br/>
+                        고객지원센터 080-023-9776 (고객불편사항 등) 사업자 번호 : 106-81-23498  <span>│</span>  대표자 : 남익우<br/>
+                        COPYRIGHT &copy; 2013 KRISPY KREME DOUGHNUTS ALL RIGHTS RISERVED
+                    </address>
+                    
+                    
+                    <div class="footer-right">
+                        
+                        
+                        <div class="sns">
+                            <a href="http://www.lotteria.com"><img src="images/footer_ico01.gif" alt=""></a>
+                            <a href="http://www.angelinus.com"><img src="images/footer_ico02.gif" alt=""></a>
+                            <a href="http://www.tgif.co.kr "><img src="images/footer_ico03.gif" alt=""></a>
+                            <a href="https://www.facebook.com/kkdkorea1937"><img src="images/footer_ico04.gif" alt="" width="25px"></a>
+                            <a href="https://www.instagram.com/krispykremekr/"><img src="images/footer_ico05.gif" alt="" width="25px"></a>
+                            <a href="https://twitter.com/krispykremekr"><img src="images/footer_ico06.gif" alt="" width="25px"></a>
+                        </div>
+                    </div>
+                </div>
+        </footer>
+        
+        
+    </div>
+</body>
+</html>
