@@ -34,7 +34,7 @@ figure>p{position: absolute; font-family: 'Kanit', sans-serif;  font-size: 45px;
 .main-title>p{font-size: 18px; color: #525252; line-height: 25px; margin-bottom: 2%}
 #section_1 .searchbox {width: 100%; margin: 0 auto; text-align: center; margin-bottom: 5%; }
 #section_1 .searchbox .selectbox {border: 1px solid #ccc; width: 148px; vertical-align: middle; height: 57px; text-indent: 1vw; margin-right: -4px; border-right: 0; font-size: 15px; font-family: 'NanumSquareB'; appearance: none; -moz-appearance: none;
-    -webkit-appearance: none; background: url(../images/Notice/notice_arrow.png) no-repeat; background-size: 16px 18px; background-position: 117px 17px;}
+    -webkit-appearance: none; background: url(../images/notice/notice_arrow.png) no-repeat; background-size: 16px 18px; background-position: 117px 17px;}
         .text::appearance {padding-right: 50px;}
 #section_1 .searchbox .text {width: 30%; border: 1px solid #ccc; font-size: 15px;  color: black; height: 57px;  text-indent: 1vw; vertical-align: middle; font-family: 'NanumSquareB';}
 #section_1 .searchbox .text::placeholder {color: #686868;  font-family: 'NanumSquareB'; }
@@ -56,13 +56,13 @@ fieldset{border: none; margin: 0 auto;}
 #section_1 .news tbody tr td.date {width: 15%; text-align: center; border-bottom: 1px solid #c1bfbf; font-size: 16px;}
 
 #section_1 .page_num {width: 100%; text-align: center; margin: 0 auto; display: inline-block; position: relative; margin-top: 2%; margin-bottom: 5%;}
-#section_1 .page_num .front_page {display: inline-block; width: 36px; height: 35px; padding-top: 5px; background: url(../images/Notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
-#section_1 .page_num .prev {display: inline-block; width: 36px; height: 35px; background: url(../images/Notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#section_1 .page_num .front_page {display: inline-block; width: 36px; height: 35px; padding-top: 5px; background: url(../images/notice/front.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
+#section_1 .page_num .prev {display: inline-block; width: 36px; height: 35px; background: url(../images/notice/prev.png); position: relative; top: 10px; margin-right: 1%; background-size: cover;}
 #section_1 .page_num .num_1 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%; border: 1px solid #e1e1e1;}
 #section_1 .page_num .num_2 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%; border: 1px solid #e1e1e1;}
 #section_1 .page_num .num_3 {display: inline-block; width: 36px; height: 35px; line-height: 35px; margin-right: 1%; border: 1px solid #e1e1e1;}
 #section_1 .page_num .next {display: inline-block; width: 36px; height: 35px; background: url(../images/Notice/next.png); margin-right: 1%; position: relative; top: 10px; background-size: cover;}
-#section_1 .page_num .back_page {display: inline-block; width: 36px; height: 35px; background: url(../images/Notice/back.png); position: relative; top: 10px; background-size: cover;}
+#section_1 .page_num .back_page {display: inline-block; width: 36px; height: 35px; background: url(../images/notice/back.png); position: relative; top: 10px; background-size: cover;}
 .onClick{font-weight: bold; color: #00704a; border: 1px solid #00704a!important;}
 
 /*top버튼*/
